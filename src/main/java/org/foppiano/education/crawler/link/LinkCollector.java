@@ -3,7 +3,10 @@ package org.foppiano.education.crawler.link;
 import org.foppiano.education.crawler.Crawler;
 import org.foppiano.education.crawler.model.WebLink;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,7 +24,7 @@ public class LinkCollector {
 
     public void collect(List<WebLink> incomingLinks) {
         Iterator i = incomingLinks.iterator();
-        while(i.hasNext() && links.size() < Crawler.MAX_LINKS) {
+        while (i.hasNext() && links.size() < Crawler.MAX_LINKS) {
             links.add((WebLink) i.next());
         }
     }
@@ -29,9 +32,9 @@ public class LinkCollector {
     public WebLink getNewLink() {
 
         Iterator i = links.iterator();
-        while(i.hasNext()) {
+        while (i.hasNext()) {
             WebLink next = ((WebLink) i.next());
-            if(next.isVisited() == false) {
+            if (next.isVisited() == false) {
                 next.setVisited(true);
                 return next;
             }

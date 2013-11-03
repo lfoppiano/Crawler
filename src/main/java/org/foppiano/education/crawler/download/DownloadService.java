@@ -4,7 +4,6 @@ import org.foppiano.education.crawler.link.LinkParser;
 import org.foppiano.education.crawler.model.WebLink;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,7 @@ import java.util.List;
  * Time: 12:18
  * To change this template use File | Settings | File Templates.
  */
-public class DownloadService{
+public class DownloadService {
 
     private WebDownloader downloader;
     private LinkParser parser;

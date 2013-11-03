@@ -81,6 +81,6 @@ public class LinkCollectorTest {
 
     @Test
     public void testStopIfLimitReached() throws Exception {
-     //TODO
+        //TODO
     }
 }

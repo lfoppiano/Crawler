@@ -5,7 +5,6 @@ import org.foppiano.education.crawler.model.WebPage;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 
 /**
@@ -38,13 +37,13 @@ public class WebDownloader {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error while downloading the URL "+ url + ". Skipping.");
+            System.err.println("Error while downloading the URL " + url + ". Skipping.");
         } finally {
             if (output != null) {
                 try {
                     output.close();
                 } catch (IOException e) {
-                    System.err.println("Generic error while downloading the URL "+ url + ". Skipping.");
+                    System.err.println("Generic error while downloading the URL " + url + ". Skipping.");
                 }
             }
 

@@ -43,14 +43,14 @@ public class LinkParser {
                 links.add(new WebLink(found));
             }
 
-        }catch (IOException e) {
+        } catch (IOException e) {
             System.err.println("Something wrong while extracting links. Skipping.");
         } finally {
             //Cleaning up
-            if(fis != null){
-                try{
+            if (fis != null) {
+                try {
                     fis.close();
-                }catch (IOException e) {
+                } catch (IOException e) {
                     System.err.println("Something wrong happened. Skipping.");
                 }
             }
