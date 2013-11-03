@@ -1,8 +1,5 @@
 package org.foppiano.education.crawler.model;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
 /**
  * Created with IntelliJ IDEA.
  * User: lfoppiano
@@ -40,22 +37,24 @@ public class WebLink {
     }
 
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(url).toHashCode();
+        return url.length();
     }
 
-    public boolean equals(Object obj){
-        if (obj == null) { return false; }
-        if (obj == this) { return true; }
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
         if (obj.getClass() != getClass()) {
             return false;
         }
         WebLink rhs = (WebLink) obj;
-        return new EqualsBuilder()
-                .append(url, rhs.url)
-                .isEquals();
+        return url.equals(rhs.url);
     }
 
     public String toString() {
-         return this.url;
+        return this.url;
     }
 }
