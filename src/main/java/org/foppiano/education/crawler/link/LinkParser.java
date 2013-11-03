@@ -54,8 +54,9 @@ public class LinkParser {
                     System.err.println("Something wrong happened. Skipping.");
                 }
             }
-            page.getLocalFile().deleteOnExit();
-
+            if(page.getLocalFile() != null) {
+                page.getLocalFile().deleteOnExit();
+            }
 
         }
 

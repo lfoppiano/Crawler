@@ -1,5 +1,6 @@
 package org.foppiano.education.crawler.download;
 
+import org.foppiano.education.crawler.exception.RemoteException;
 import org.foppiano.education.crawler.link.LinkParser;
 import org.foppiano.education.crawler.model.WebLink;
 
@@ -28,6 +29,9 @@ public class DownloadService {
         List<WebLink> links = new ArrayList<WebLink>();
         try {
             links = parser.parsePage(downloader.download(link.getUrl()));
+            System.out.println("Visited "+ link.getUrl()+", extracted " + links.size()+" links.");
+        } catch (RemoteException e) {
+            System.err.println("Some problem with the external web site "+link.getUrl() +". Skipping. ");
         } catch (IOException e) {
             System.err.println("Some problem to extract links from " + link.getUrl() + ". Skipping.");
         }

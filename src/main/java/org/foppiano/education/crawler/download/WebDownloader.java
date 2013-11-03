@@ -1,5 +1,6 @@
 package org.foppiano.education.crawler.download;
 
+import org.foppiano.education.crawler.exception.RemoteException;
 import org.foppiano.education.crawler.model.WebPage;
 
 import java.io.*;
@@ -16,7 +17,7 @@ import java.net.URL;
  */
 public class WebDownloader {
 
-    public WebPage download(String inputUrl) throws MalformedURLException {
+    public WebPage download(String inputUrl) throws MalformedURLException, RemoteException {
         OutputStream output = null;
         File tmpFile = null;
 
@@ -37,7 +38,7 @@ public class WebDownloader {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error while downloading the URL " + url + ". Skipping.");
+            throw new RemoteException();
         } finally {
             if (output != null) {
                 try {
