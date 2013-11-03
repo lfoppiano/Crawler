@@ -1,7 +1,7 @@
 package org.foppiano.education.crawler;
 
 import org.foppiano.education.crawler.download.DownloadService;
-import org.foppiano.education.crawler.download.LinkParser;
+import org.foppiano.education.crawler.link.LinkParser;
 import org.foppiano.education.crawler.download.WebDownloader;
 import org.foppiano.education.crawler.link.LinkCollector;
 import org.foppiano.education.crawler.model.WebLink;
@@ -36,11 +36,11 @@ public class Crawler {
 
         Iterator i = collector.getLinks().iterator();
 
-        System.out.println("Extracted "+ collector.getLinks().size() +" links");
 
         while(i.hasNext()) {
             System.out.println((i.next()));
         }
+        System.out.println("Extracted "+ collector.getLinks().size() +" links");
 
     }
 

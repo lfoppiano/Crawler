@@ -1,5 +1,6 @@
 package org.foppiano.education.crawler.download;
 
+import org.foppiano.education.crawler.link.LinkParser;
 import org.foppiano.education.crawler.model.WebLink;
 
 import java.io.IOException;
@@ -14,7 +15,7 @@ import java.util.List;
  * Time: 12:18
  * To change this template use File | Settings | File Templates.
  */
-public class DownloadService implements Runnable{
+public class DownloadService{
 
     private WebDownloader downloader;
     private LinkParser parser;
@@ -28,17 +29,10 @@ public class DownloadService implements Runnable{
         List<WebLink> links = new ArrayList<WebLink>();
         try {
             links = parser.parsePage(downloader.download(link.getUrl()));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            System.err.println("Some problem to extract links from " + link.getUrl() + ". Skipping.");
         }
 
         return links;
-    }
-
-    @Override
-    public void run() {
-        //nothing for now
     }
 }

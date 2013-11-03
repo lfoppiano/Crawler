@@ -58,7 +58,7 @@ public class LinkCollectorTest {
         WebLink link = target.getNewLink();
         assertEquals("Link is not correct", "http://www.google.com", link.getUrl());
         link = target.getNewLink();
-        assertEquals("Link is not correct", "http://www.google.com", link.getUrl());
+        assertNull("Link is not correct", link);
 
     }
 

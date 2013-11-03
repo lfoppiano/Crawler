@@ -37,17 +37,14 @@ public class WebDownloader {
                     output.write(buffer, 0, n);
                 }
             }
-
-        } catch (ProtocolException e) {
-            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error while downloading the URL "+ url + ". Skipping.");
         } finally {
             if (output != null) {
                 try {
                     output.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.err.println("Generic error while downloading the URL "+ url + ". Skipping.");
                 }
             }
 

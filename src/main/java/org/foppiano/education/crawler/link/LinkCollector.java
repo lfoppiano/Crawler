@@ -26,7 +26,7 @@ public class LinkCollector {
         }
     }
 
-    public WebLink getNewLink() throws Exception {
+    public WebLink getNewLink() {
 
         Iterator i = links.iterator();
         while(i.hasNext()) {
@@ -39,13 +39,6 @@ public class LinkCollector {
 
         return null;
 
-    }
-
-    public void stopIfLimitReached() {
-        /*if (links.size() >= Crawler.MAX_LINKS) {
-            System.out.println(Crawler.MAX_LINKS + " links collected, ending.");
-            System.exit(0);
-        }*/
     }
 
     public Set<WebLink> getLinks() {

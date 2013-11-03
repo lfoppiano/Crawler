@@ -1,5 +1,6 @@
 package org.foppiano.education.crawler.download;
 
+import org.foppiano.education.crawler.link.LinkParser;
 import org.foppiano.education.crawler.model.WebLink;
 import org.foppiano.education.crawler.model.WebPage;
 import org.junit.Before;
